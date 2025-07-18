@@ -1,8 +1,82 @@
 <div class="container">
+  <h2>Registro de tareas</h2>
+  <p></p>
   <div class="row">
-    
+    <div class="col" style="display: flex; align-items: center; gap: 5px;">
+      <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Ver</button>
+      <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Crear</button>
+      <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Editar</button>
+      <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Eliminar</button>
+      <button type="button" class="btn btn-outline-info">Actualizar</button>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Reportes
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">PDF</a></li>
+          <li><a class="dropdown-item" href="#">EXCEL</a></li>
+          <li><a class="dropdown-item" href="#">WORD</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
     <div class="col">
-        <form>
+      <table class="table table-hover table-sm table-bordered ">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre de tarea</th>
+            <th scope="col">Descripcion de tarea</th>
+            <th scope="col">Fecha de ejecución</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>comprar pan</td>
+            <td>Otto</td>
+            <td>mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>tender la cama</td>
+            <td>Thornton</td>
+            <td>fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Lavar los dientes</td>
+            <td>Lavar los dientes</td>
+            <td>twitter</td>
+          </tr>
+        </tbody>
+      </table>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Formulario de Creación/Edición</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <form>
             <div class="form-group">
                 <label for="nameTask" class="form-label">Nombre de Tarea</label>
                 <input type="text" class="form-control" id="nameTask" placeholder="Ejm. limpiar cocina">
@@ -12,24 +86,65 @@
                 <input type="text" class="form-control" id="descriptionTask" placeholder="Explicar toda la tarea que hacer">
             </div>
             <div class="form-group">
-                <label for="dateTask" class="form-label">Fecha</label>
+                <label for="dateTask" class="form-label">Fecha de ejecución</label>
                 <input type="date" class="form-control" id="dateTask" placeholder="30/05/2025">
             </div>
-            <hr class="my-4">
-            <button type="submit" class="w-100 btn btn-primary btn-lg">Crear</button>
-        </form>
-    </div>
-    <div class="col">
-        <ul class="list-group">
-            <li class="list-group-item">comprar pan</li>
-            <li class="list-group-item">tender la cama</li>
-            <li class="list-group-item">Lavar los dientes</li>
-        </ul>
-    </div>
-    <div class="col">
-        <h3>Nombre de tarea</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit laborum fugit architecto ullam repudiandae!.</p>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Guardar</button>
+        </div>
+
+      </div>
     </div>
   </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Información del registro</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <p><span class="fw-bold">Nombre de Tarea:</span> Comprar pan</p>
+          <p><span class="fw-bold">Descripción de tarea:</span> Comprar pan en la mañana, antes de salir</p>
+          <p><span class="fw-bold">Fecha de ejecución:</span> 05/05/2025</p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Guardar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Confirmación de registro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Desea eliminar el registro?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+          <button type="button" class="btn btn-primary">Si</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
